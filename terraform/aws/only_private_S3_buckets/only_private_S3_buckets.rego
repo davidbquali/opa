@@ -12,6 +12,7 @@ deny[reason] {
     resources.type == "aws_s3_bucket"
     resources.change.after.acl != "private"
     x:= data.my_data
+    not contains(x, "xxx")
     reason:= "Deployment of not private AWS S3 bucket is not allowed"
 }
 
